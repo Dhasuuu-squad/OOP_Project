@@ -19,10 +19,10 @@ public class Timer extends Thread {
                 if (elapsedTime >= 1L) {
                     startingTime = endingTime;
                     ++counterTime;
-                    Main.window.setTitle("Eldritch Knight  Elapsed Time: " + counterTime);
+                    main.window.setTitle("Eldritch Knight  Elapsed Time: " + counterTime);
                     System.out.println("counter: " + counterTime);
                 }
             }
 
         }
-    }
+}
