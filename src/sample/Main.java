@@ -22,8 +22,9 @@ public class Main extends Application {
 
 
         window.setScene(Menu.menu());
+        Timer showRunTime = new Timer();
+        showRunTime.start();
 
-        window.setTitle("Eldritch Knight");
         window.show();
 
     }
