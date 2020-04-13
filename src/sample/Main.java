@@ -1,13 +1,11 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
     public static Stage window = new Stage();
+    public static long counterTime = 0;
     @Override
     public void start(Stage primaryStage) throws Exception
     {
@@ -22,7 +20,9 @@ public class Main extends Application {
 
 
         window.setScene(Menu.menu());
-        Timer showRunTime = new Timer();
+        Timer t1 = new Timer();
+        Thread showRunTime = new Thread(t1);
+        showRunTime.setDaemon(true);
         showRunTime.start();
 
         window.show();

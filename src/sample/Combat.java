@@ -2,12 +2,10 @@ package sample;
 
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
-import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.control.SplitPane;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,13 +14,12 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 
-import static javafx.geometry.HPos.*;
 
 public class Combat extends Main {
 
     static StackPane stack = new StackPane();
 
-    //static HBox layout;
+
     public static void start() {
 
         Media media = new Media("file:///E:/PokeX/src/bgm.mp3");
@@ -49,6 +46,7 @@ public class Combat extends Main {
         ImageView opponent = new ImageView();
         opponent.setImage(opponentCharacter);
 
+
         AnchorPane foreGround = new AnchorPane();
 
         Label playerHP = new Label("Player's Health");
@@ -56,6 +54,7 @@ public class Combat extends Main {
 
         Label opponentHP = new Label("Opponent's Health");
         opponentHP.setStyle("-fx-text-fill: white;" + "-fx-background-color: grey;" + "-fx-font-weight: bold;");
+
 
         ProgressBar playerHealthBar = new ProgressBar(100);
         playerHealthBar.setPrefSize(250, 30);
@@ -83,8 +82,6 @@ public class Combat extends Main {
 
         stack.setStyle("-fx-background-color: black");
 
-//        layout = new HBox(50);
-//        layout.setStyle("-fx-background-color: black");
         GridPane grid = new GridPane();
         grid.setVgap(20);
         grid.setHgap(80);
@@ -102,20 +99,6 @@ public class Combat extends Main {
         block.setOnMouseExited(e -> block.setEffect(null));
         block.setStyle("-fx-background-radius: 30;" + "-fx-background-color:  #778899;" +
                 "-fx-text-fill: black;" + "-fx-font-weight: bold;");
-
-//        Button fight = new Button("Fight");
-//        fight.setPrefWidth(250);
-//        fight.setPrefHeight(80);
-//        fight.setStyle("-fx-background-radius: 30;" + "-fx-background-color:  #b22222;" +
-//                "-fx-text-fill: black;" + "-fx-font-weight: bold;");
-//
-//        fight.setOnAction(e -> {
-//            // fight.setVisible(false);
-//            // block.setVisible(false);
-//            Fight();
-//            // fight.setVisible(true);
-//            // block.setVisible(true);
-//        });
 
         Button swordAttack = new Button("Sword Attack");
         swordAttack.setPrefWidth(200);
@@ -158,8 +141,7 @@ public class Combat extends Main {
 
         grid.setHalignment(block, HPos.CENTER);
 
-//        layout.getChildren().addAll(fight,block,swordAttack,magic,atkBuff,defBuff);
-//        layout.setAlignment(Pos.CENTER);
+
         grid.setAlignment(Pos.CENTER);
         grid.setStyle("-fx-background-color: black;");
 
@@ -173,57 +155,3 @@ public class Combat extends Main {
     }
 }
 
-//    public static void Fight()
-//    {
-//
-//        GridPane grid = new GridPane();
-//        grid.setVgap(40);
-//        grid.setHgap(80);
-//
-//        Button swordAttack = new Button("Sword Attack");
-//        swordAttack.setPrefWidth(200);
-//        swordAttack.setPrefHeight(80);
-//        swordAttack.setStyle("-fx-background-color: #1e90ff;"+
-//                "-fx-font-weight: bold;"+"-fx-background-radius: 30;"+"-fx-text-fill: white;");
-//
-//        Button magic = new Button("Magic");
-//        magic.setPrefWidth(200);
-//        magic.setPrefHeight(80);
-//        magic.setStyle("-fx-background-color:  #9932cc;"+ "-fx-font-weight: bold;"+
-//                "-fx-background-radius: 30;"+"-fx-text-fill: white;");
-//
-//        Button atkBuff = new Button("Power of Hercueles");
-//        atkBuff.setPrefWidth(200);
-//        atkBuff.setPrefHeight(80);
-//        atkBuff.setStyle("-fx-background-color:  #8b0000;"+
-//                "-fx-font-weight: bold;"+"-fx-background-radius: 30;"+"-fx-text-fill: white;");
-//
-//        Button defBuff = new Button("Protection of Athena");
-//        defBuff.setPrefWidth(200);
-//        defBuff.setPrefHeight(80);
-//        defBuff.setStyle("-fx-background-color: #228b22;"+
-//                "-fx-font-weight: bold;"+"-fx-background-radius: 30;"+"-fx-text-fill: white;");
-//
-//        Button back = new Button("Back");
-//        back.setPrefSize(50,50);
-//        back.setStyle("-fx-background-radius: 40;"+"-fx-background-color: red;"+
-//                "-fx-text-fill: black;"+"-fx-font-weight: bold;");
-//        back.setOnAction(e ->
-//        {
-//            stack.getChildren().remove(grid);
-//        });
-//
-//        grid.add(swordAttack,0,0);
-//        grid.add(magic,0,1);
-//        grid.add(atkBuff,1,0);
-//        grid.add(defBuff,1,1);
-//        grid.add(back,2,0);
-//
-//        grid.setAlignment(Pos.CENTER);
-//        grid.setStyle("-fx-background-color: black;");
-//
-//        stack.getChildren().add(1,grid);
-//
-//
-//    }
-//}

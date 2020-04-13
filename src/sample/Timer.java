@@ -1,28 +1,34 @@
 package sample;
 
-public class Timer extends Thread {
+import javafx.animation.AnimationTimer;
+
+public class Timer extends Main implements Runnable {
 
 
+    public void run() {
 
-        public void run () {
-            long counterTime = 0L;
-            boolean flag = true;
-            Main main = new Main();
-            long startingTime = System.nanoTime();
-            System.out.println(startingTime);
 
-            while (flag) {
+        final long[] startingTime = {System.nanoTime()};
+        AnimationTimer timer = new AnimationTimer() {
+
+            @Override
+            public void handle(long l) {
                 long endingTime = System.nanoTime();
-                System.out.println(endingTime);
-                long elapsedTime = (endingTime - startingTime) / 1000000000L;
-                System.out.println(elapsedTime);
-                if (elapsedTime >= 1L) {
-                    startingTime = endingTime;
-                    ++counterTime;
-                    main.window.setTitle("Eldritch Knight  Elapsed Time: " + counterTime);
-                    System.out.println("counter: " + counterTime);
+                long elapsedTime = (endingTime - startingTime[0]) / 1000000000;
+                if (elapsedTime >= 1) {
+
+                    startingTime[0] = endingTime;
+                    counterTime++;
+                    System.out.println(counterTime);
+                    window.setTitle("Eldritch Knight "+"  "+"Elapsed Time: "+counterTime+" seconds");
+
+
                 }
             }
+        };
+        timer.start();
 
-        }
+
+    }
+
 }
