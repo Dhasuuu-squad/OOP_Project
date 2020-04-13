@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     public static Stage window = new Stage();
-    public static long counterTime = 0;
+
     @Override
     public void start(Stage primaryStage) throws Exception
     {
