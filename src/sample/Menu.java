@@ -12,8 +12,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.control.Button;
-
-
+import javafx.scene.shape.Rectangle;
 
 
 public class Menu {
@@ -40,8 +39,6 @@ public class Menu {
         DropShadow shadow = new DropShadow();
         shadow.setOffsetY(7);
         shadow.setRadius(10);
-
-
 
         Button startGame = new Button("Start Game");
         startGame.setPrefSize(150,60);

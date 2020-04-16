@@ -23,7 +23,7 @@ public class Combat extends Main {
     static int buttonWidth = 150;
     static int buttonHeight = 80;
     static AnchorPane foreGround = new AnchorPane();
-    static   ImageView imageView ;
+    static  Label info;
     public static void start() {
 
 
@@ -99,11 +99,15 @@ public class Combat extends Main {
 
         backGround.getChildren().addAll(imageHolder, foreGround);
 
+        info = new Label();
+        info.setPrefSize(700,100);
+        info.setAlignment(Pos.CENTER);
+        info.setStyle("-fx-background-color: rgb(0,0,0,.7);"+"-fx-background-radius:20;"+
+                "-fx-border-color: white;"+"-fx-border-width: 5;"+"-fx-font-size: 18px;"
+        +"-fx-font-weight: bold;"+"-fx-text-fill:white;"+"-fx-border-radius: 20");
 
-        Image dialogue = new Image("dialogueL.jpg");
-        imageView = new ImageView(dialogue);
-
-        foreGround.setTopAnchor(imageView,500.0);
+        foreGround.setTopAnchor(info,500.0);
+        foreGround.setLeftAnchor(info,50.0);
 
         Media heptic1 = new Media("file:///E:/PokeX/src/clicked.mp3");
         hepticClicked = new MediaPlayer(heptic1);
@@ -170,11 +174,13 @@ public class Combat extends Main {
         swordAttack.setOnMouseEntered(e -> {
             swordAttack.setEffect(dropShadow);
 
-            foreGround.getChildren().add(imageView);
+            info.setText("Swings the sword with great momentum towards the enemy");
+            foreGround.getChildren().add(info);
         });
         swordAttack.setOnMouseExited(e -> {
             swordAttack.setEffect(null);
-            foreGround.getChildren().remove(imageView);
+            info.setText(null);
+            foreGround.getChildren().remove(info);
         });
         swordAttack.setOnMouseClicked(e ->{
             hepticClicked.stop(); //always use stop() before play()
@@ -194,11 +200,13 @@ public class Combat extends Main {
         magic.setPrefSize(buttonWidth-30,buttonHeight-30);
         magic.setOnMouseEntered(e -> {
             magic.setEffect(dropShadow);
-            foreGround.getChildren().add(imageView);
+            info.setText("Uses magical daggers and throw them at the enemy");
+            foreGround.getChildren().add(info);
         });
         magic.setOnMouseExited(e -> {
             magic.setEffect(null);
-            foreGround.getChildren().remove(imageView);
+            info.setText(null);
+            foreGround.getChildren().remove(info);
         });
         magic.setOnMouseClicked(e ->{
             hepticClicked.stop(); //always use stop() before play()
@@ -215,11 +223,13 @@ public class Combat extends Main {
         atkBuff.setPrefSize(buttonWidth,buttonHeight-30);
         atkBuff.setOnMouseEntered(e -> {
             atkBuff.setEffect(dropShadow);
-            foreGround.getChildren().add(imageView);
+            info.setText("By the name of Hercueles, your strength increases ");
+            foreGround.getChildren().add(info);
         });
         atkBuff.setOnMouseExited(e -> {
             atkBuff.setEffect(null);
-            foreGround.getChildren().remove(imageView);
+            info.setText(null);
+            foreGround.getChildren().remove(info);
         });
         atkBuff.setOnMouseClicked(e ->{
             hepticClicked.stop(); //always use stop() before play()
@@ -236,12 +246,14 @@ public class Combat extends Main {
         defBuff.setPrefSize(buttonWidth,buttonHeight-30);
         defBuff.setOnMouseEntered(e -> {
             defBuff.setEffect(dropShadow);
+            info.setText("By the grace of Goddess Athena, you become more resistive");
+            foreGround.getChildren().add(info);
 
-            foreGround.getChildren().add(imageView);
         });
         defBuff.setOnMouseExited(e -> {
             defBuff.setEffect(null);
-            foreGround.getChildren().remove(imageView);
+            info.setText(null);
+            foreGround.getChildren().remove(info);
         });
         defBuff.setOnMouseClicked(e ->{
             hepticClicked.stop(); //always use stop() before play()
