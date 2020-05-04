@@ -27,15 +27,6 @@ public class Menu {
         ImageView imageHolder = new ImageView();
         imageHolder.setImage(background);
 
-//        Label txt = new Label("Come to the Path of Glory....");
-//        txt.setMinSize(width * 2, 50);
-//        txt.setStyle("-fx-background-color:  black;"+"-fx-text-fill: black;"+"-fx-background-image: url('txt2.jpg');"+
-//                "-fx-font-size: 20px; "+"-fx-font-weight: bold;"+"-fx-font-family: Georgia, serif;"
-//                  +"-fx-background-radius: 50;"+"-fx-blend: lighten;");
-//
-//        //txt.setBorder((new Border(new BorderStroke(Color.LIGHTGREEN, BorderStrokeStyle.SOLID, null, new BorderWidths(3)))));
-//        txt.setAlignment(Pos.CENTER);
-
         DropShadow shadow = new DropShadow();
         shadow.setOffsetY(7);
         shadow.setRadius(10);
